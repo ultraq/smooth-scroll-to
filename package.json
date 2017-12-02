@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/smooth-scroll-to",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "Smooth-scroll to a page element",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com>",
 	"license": "Apache-2.0",

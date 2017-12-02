@@ -21,18 +21,18 @@ import {$}          from 'dumb-query-selector';
 const EASE = BezierEasing(0.25, 0.1, 0.25, 1.0);
 
 /**
- * Smooth scroll to a page element identified by the given selector.
+ * Smooth scroll an area of a page to bring another area of the page into view.
  * 
+ * @param {String} containerSelector
+ *   A CSS selector for picking out the scrolling container that has the target
+ *   element to scroll into view.
  * @param {String} targetSelector
  *   A CSS selector for picking out the element to scroll to.
- * @param {String} [containerSelector='body']
- *   A CSS selector for picking out the scrolling container element that has the
- *   target element to scroll into view.  Defaults to the document body.
  * @return {Promise}
  *   A promise that is resolved once the element has been scrolled to, or
  *   resolved immediately if the element doesn't exist.
  */
-export default function smoothScrollTo(targetSelector, containerSelector = 'body') {
+export default function smoothScrollTo(containerSelector, targetSelector) {
 
 	let $container = $(containerSelector);
 	let $target = $(targetSelector, $container);

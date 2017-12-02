@@ -27,7 +27,7 @@ npm install @ultraq/smooth-scroll-to --save
 Or using as a standalone library:
 
 ```html
-<script src="https://unpkg.com/@ultraq/smooth-scroll-to@1.0.0/dist/smooth-scroll-to.min.js")></script>
+<script src="https://unpkg.com/@ultraq/smooth-scroll-to@0.1.0/dist/smooth-scroll-to.min.js"></script>
 ```
 
 
@@ -42,12 +42,11 @@ the `dist/smoothScrollTo.min.js` file, then this function is available globally.
 ```javascript
 import smoothScrollTo from 'smooth-scroll-to';
 
-smoothScrollTo('#error-banner');
+smoothScrollTo('body', '#error-banner');
 ```
 
-### smoothScrollTo(targetSelector, containerSelector = 'body')
+### smoothScrollTo(containerSelector, targetSelector)
 
+ - **containerSelector**: a CSS selector for picking out the scrolling container
+   that has the target element to scroll into view
  - **targetSelector**: a CSS selector for picking out the element to scroll to.
- - **containerSelector**: optional, a CSS selector for picking out the scrolling
-   container element that has the target element to scroll into view.  Defaults
-   to the document body.
