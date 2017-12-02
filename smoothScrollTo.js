@@ -14,22 +14,25 @@
  * limitations under the License.
  */
 
-import Transition, {EASE} from '@ultraq/transition';
-import {$}                from 'dumb-query-selector';
+import Transition   from '@ultraq/transition';
+import BezierEasing from 'bezier-easing';
+import {$}          from 'dumb-query-selector';
+
+const EASE = BezierEasing(0.25, 0.1, 0.25, 1.0);
 
 /**
  * Smooth scroll to a page element identified by the given selector.
  * 
- * @param {String} containerSelector
- *   A CSS selector for picking out the scrolling container element that has the
- *   target element to scroll into view.
  * @param {String} targetSelector
  *   A CSS selector for picking out the element to scroll to.
+ * @param {String} [containerSelector='body']
+ *   A CSS selector for picking out the scrolling container element that has the
+ *   target element to scroll into view.  Defaults to the document body.
  * @return {Promise}
  *   A promise that is resolved once the element has been scrolled to, or
  *   resolved immediately if the element doesn't exist.
  */
-export default function smoothScrollTo(containerSelector, targetSelector) {
+export default function smoothScrollTo(targetSelector, containerSelector = 'body') {
 
 	let $container = $(containerSelector);
 	let $target = $(targetSelector, $container);
@@ -39,7 +42,7 @@ export default function smoothScrollTo(containerSelector, targetSelector) {
 
 		return new Transition(delta => {
 			$container.scrollTop = initialScroll + (scrollTarget * delta);
-		}, 1000, EASE).start();
+		}, 800, EASE).start();
 	}
 	return Promise.resolve();
 }

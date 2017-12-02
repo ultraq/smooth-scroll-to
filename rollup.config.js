@@ -17,7 +17,7 @@ export default {
 	plugins: [
 		nodeResolve(),
 		commonjs(),
-		// uglify({}, minify)
+		uglify({}, minify)
 	],
 	sourcemap: true
 };
