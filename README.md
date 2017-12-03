@@ -27,7 +27,7 @@ npm install @ultraq/smooth-scroll-to --save
 Or using as a standalone library:
 
 ```html
-<script src="https://unpkg.com/@ultraq/smooth-scroll-to@0.1.0/dist/smooth-scroll-to.min.js"></script>
+<script src="https://unpkg.com/@ultraq/smooth-scroll-to/dist/smooth-scroll-to.min.js"></script>
 ```
 
 
