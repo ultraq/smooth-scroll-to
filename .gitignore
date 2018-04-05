@@ -1,6 +1,6 @@
 /.idea
 /coverage
-/dist
 /node_modules
 npm-debug.log
-smoothScrollTo.node.js*
+smoothScrollTo.cjs.js*
+smoothScrollTo.es.js*

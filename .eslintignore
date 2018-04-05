@@ -1,2 +1,3 @@
 /coverage
-SmoothScrollTo.node.js
+smoothScrollTo.cjs.js
+smoothScrollTo.es.js

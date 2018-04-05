@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/smooth-scroll-to",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Smooth-scroll to a page element",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com>",
 	"license": "Apache-2.0",
@@ -12,30 +12,25 @@
 		"smooth",
 		"scroll"
 	],
-	"module": "smoothScrollTo.js",
-	"main": "smoothScrollTo.node.js",
+	"module": "smoothScrollTo.es.js",
+	"main": "smoothScrollTo.cjs.js",
 	"scripts": {
 		"lint": "eslint '**/*.js'",
-		"build": "npm run build:browser && npm run build:node",
-		"build:browser": "rollup --config",
-		"build:node": "babel --source-maps true smoothScrollTo.js --out-file smoothScrollTo.node.js",
+		"build": "npm run build:cjs && npm run build:es",
+		"build:cjs": "BABEL_ENV=cjs babel smoothScrollTo.js --out-file smoothScrollTo.cjs.js --source-maps",
+		"build:es": "BABEL_ENV=es babel smoothScrollTo.js --out-file smoothScrollTo.es.js --source-maps",
 		"prepublish": "npm run build"
 	},
 	"dependencies": {
-		"@ultraq/transition": "^1.0.1",
+		"@ultraq/transition": "^1.1.0",
 		"bezier-easing": "^2.0.3",
 		"dumb-query-selector": "^3.2.0"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
 		"babel-core": "^6.26.0",
-		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
 		"eslint": "^4.7.2",
-		"eslint-config-ultraq": "^2.0.1",
-		"rollup": "^0.50.0",
-		"rollup-plugin-commonjs": "^8.2.1",
-		"rollup-plugin-node-resolve": "^3.0.0",
-		"rollup-plugin-uglify": "^2.0.1",
-		"uglify-es": "^3.2.0"
+		"eslint-config-ultraq": "^2.0.1"
 	}
 }
